@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Blockchain: A Possible Solution for the Internet of Things</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,400i,700,700i" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="wrapper">
+
+    <section>
+      <h1>THE BLOCKCHAIN: A POSSIBLE SOLUTION FOR THE INTERNET OF THINGS</h1>
+      <p><strong>G Roques</strong></p>
+      <p><a href="mailto:gbrwv8@mail.umsl.edu">gbrwv8@mail.umsl.edu</a></p>
+      <p>May 9<sup>th</sup> 2017</p>
+    </section>
+
+    <section>
+      <h2>ABSTRACT</h2>
+      <p>
+          Traditional centralized approaches to IoT suffer from inherent weaknesses
+          like single points of failure and high costs. We examine blockchains as a
+          possible, more decentralized solution. We discuss five main challenges IoT
+          faces with traditional approaches and how the blockchain circumvents these.
+          After that we provide a broad overview of what the blockchain is, how it
+          works, and introduce Ethereum&#8212;a blockchain platform for building
+          decentralized applications. We then give three examples demonstrating the
+          combination of blockchain and IoT. Next we examine two key blockchain
+          challenges and how Ethereum plans to overcome them. We conclude blockchain
+          is a promising technology for IoT, but needs further development to be a
+          practical solution.
+      </p>
+    </section>
+
+    <section>
+      <h2>KEYWORDS</h2>
+      <p>
+          Internet of Things, IoT, blockchain, peer to peer distributed networks,
+          Bitcoin, Ethereum, Dapps, decentralized applications, smart contracts
+      </p>
+    </section>
+  
+    <section>
+      <h2>TABLE OF CONTENTS</h2>
+      <ol class="table-of-contents">
+        <li><a data-scroll href="#introduction">Introduction</a></li>
+        <li>
+          <a data-scroll href="#problem-with-centralization">The Problem with Centralization</a>
+          <ol>
+            <li>High costs</li>
+            <li>Security</li>
+            <li>Privacy</li>
+            <li>Interoperability</li>
+            <li>Heavy Network Traffic</li>
+          </ol>
+        </li>
+        <li>
+          <a data-scroll href="#what-is-blockchain">What Is the Blockchain?</a>
+          <ul>
+            <li>How does the blockchain work?</li>
+            <li>Public, Private, and Consortium Blockchains</li>
+            <li>Ethereum, Smart Contracts, and Dapps</li>
+          </ul>
+        </li>
+        <li>
+          <a data-scroll href="#iot-applications">Applications to IoT</a>
+          <ol>
+            <li>Semi-Autonomous Washing Machine</li>
+            <li>Slock.it</li>
+            <li>Supply Chains</li>
+          </ol>
+        </li>
+        <li>
+          <a data-scroll href="#blockchain-challenges">Blockchain Challenges</a>
+          <ol>
+            <li>
+              Scalability
+              <ul>
+                <li>Processing Power</li>
+                <li>Storage</li>
+              </ul>
+            </li>
+            <li>Privacy</li>
+          </ol>
+        </li>
+        <li><a data-scroll href="#conclusion">Conclusion</a></li>
+      </ol>
+    </section>
+
+    <!-- SECTION I -->
+    <section id="introduction">
+      <h2>I. INTRODUCTION</h2>
+      <p>
+          Business Insider projects the number of IoT devices will more than triple
+          over the next five years [<a data-scroll href="#Newman17">Newman17</a>]. The Internet of Things (IoT) will
+          impact lives to an ever-greater degree as more and more devices gain
+          connectivity. From people&#8217;s homes, cars, hospitals, and even
+          bodies&#8212;IoT creates endless possibilities.
+      </p>
+      <p>
+          Fulfilling this vision demands overcoming many challenges. These challenges
+          stem from the centralized nature of traditional client-server models. IoT
+          needs a more decentralized approach, namely the blockchain.
+      </p>
+      <p>
+          In 2008 a mysterious whitepaper titled &#8220;Bitcoin: A Peer-to-Peer
+          Electronic Cash System&#8221; emerges on the Internet. The anonymous author
+          introduces the blockchain, a public ledger, to solve the double spending
+          problem. For the first time in history, electronic payments were possible
+          without a trusted intermediary.
+      </p>
+      <p>
+          Years later in 2014, Vitalik Buterin proposes a new platform called
+          Ethereum. Like Bitcoin, Ethereum utilizes a blockchain and has
+          cryptocurrency. Unlike Bitcoin, Ethereum features a Turing-complete
+          programming language. This makes Ethereum versatile and capable of
+          applications beyond the scope of money. Versatility, among other properties
+          we explore later, make Ethereum a promising solution for IoT.
+      </p>
+      <p>
+          The success of Bitcoin&#8217;s underlying blockchain technology has
+          generated much interest over the years. Not only from the public, but from
+          industry leaders like IBM, Samsung, and Microsoft. Figure 1 displays
+          interest in blockchain over the last five years and evidences this growing
+          trend.
+      </p>
+
+      <div class="frame">
+        <p class="caption">
+          <strong class="caption-label">Figure 1:</strong>
+           GoogleTrends for the term &ldquo;blockchain&rdquo; over the past five years
+        </p>
+        <img src="blockchain-google-trends.png" alt="Interest in blockchain over the past five years">
+        <p class="caption">
+          <strong class="caption-label">Source:</strong>
+          <a target="_blank" href="https://trends.google.com/trends/explore?q=blockchain">
+            https://trends.google.com/trends/explore?q=blockchain
+          </a>
+        </p>
+      </div>
+
+      <p>
+          But why the hype? What makes blockchain so interesting? This paper aims to
+          explore these questions in the following sections. Section II discusses the
+          challenges stemming from centralization and makes the case for the
+          blockchain. Section III describes what the blockchain is, how it works, and
+          the Ethereum platform. Section IV discusses three blockchain applications
+          relating to IoT. Section V examines the challenges blockchains face, and
+          how Ethereum plans to overcome them. Finally, we conclude in Section VI.
+      </p>
+      <p>
+    </section>
+
+    <!-- SECTION II -->
+    <section id="problem-with-centralization">
+      <h2>II. THE PROBLEM WITH CENTRALIZATION</h2>
+      <p>
+          The client-server model reigns supreme among application architectures
+          today. Therefore, many IoT applications use this existing paradigm. In a
+          client-server model, multiple clients talk to one centralized server. This
+          develops mega-monopolies like Amazon, Google, and Facebook. In addition to
+          creating monopolies, central servers create single points of failure, and
+          easy targets for censorship. The blockchain circumvents these issues with
+          decentralized Peer-to-Peer networking. In a Peer-to-Peer network, computers
+          connect directly and share resources. No need for a central server.
+      </p>
+      <p>
+          In addition to the problems stated above, we can identify five main
+          challenges relating specifically to IoT:
+      </p>
+      <ol>
+        <li>High costs</li>
+        <li>Security</li>
+        <li>Privacy</li>
+        <li>Interoperability</li>
+        <li>Heavy Network Traffic</li>
+      </ol>
+      <p>
+          Each of these challenges stem from centralization, and could be solved by
+          either Peer-to-Peer networks or blockchains.
+      </p>
+
+      <h3>High Costs</h3>
+      <p>
+          Typical infrastructure handling IoT today requires expensive networking
+          equipment and vast server farms. An ever-increasing number of devices from
+          6.6 billion in 2016 to 22.5 billion in 2021 leads to an unsustainable model
+          [<a data-scroll href="#Newman17">Newman17</a>]. Infrastructure to analyze, process, and store massive amounts
+          of data further increase costs.
+      </p>
+      <p>
+          Maintenance costs are also high. Think about software updates. Devices like
+          LED light bulbs and cars can last for years if not decades. Many companies
+          fail to meet revenue targets and must continue providing software updates
+          for fear of losing their user base [<a data-scroll href="#Brody14">Brody14</a>]. Either companies pay the
+          price of maintaining server infrastructure for updates, or devices become
+          obsolete. Both situations are not ideal.
+      </p>
+      <p>
+          In contrast, decentralized networks and blockchains offer very low costs.
+          Instead of paying for a central point, peers in the network provide the
+          necessary computation, networking, and storage resources. Providing
+          software updates only requires broadcasting the update to neighboring
+          peers, which in turn broadcast to their neighboring peers, and so on, until
+          the update propagates across the network.
+      </p>
+
+      <h3>Security</h3>
+      <p>
+          In addition to high costs, centralized networks struggle with security.
+          Many IoT applications rely on one centralized cloud server containing a
+          list of every registered device. Companies must protect against
+          man-in-the-middle attacks and device spoofing. Hackers intercept
+          information sent between a device and server with man-in-the-middle
+          attacks. Then they use that information to impersonate a device and gain
+          entrance to a network.
+      </p>
+      <p>
+          Every device in a network presents an opportunity for a hacker. Numerous
+          examples in the media exist: from remote controlling jeeps, to changing a
+          sniper&#8217;s target, and even altering a patient&#8217;s dose in a
+          hospital [<a data-scroll href="#Osborne15">Osborne15</a>][<a data-scroll href="#Greenberg15">Greenberg15</a>][<a data-scroll href="#Kovacs15">Kovacs15</a>]. IoT networks only remain as
+          secure as the least secure device. In other words, a hacker only needs to
+          find the weakest link.
+      </p>
+      <p>
+          While decentralized networks also struggle with security, blockchains offer
+          a unique solution through asymmetric cryptography and consensus algorithms.
+          We discuss asymmetric cryptography and consensus algorithms more in Section
+          III.
+      </p>
+
+      <h3>Privacy</h3>
+      <p>
+          Privacy remains a big issue with centralized networks. Centralized cloud
+          servers store massive amounts of data generated by devices. Hackers target
+          these giant data stores to gain access to sensitive and private
+          information. Privacy grows more concerning depending on the type of
+          application. For example, applications relating to health care must abide
+          by various laws and regulations like HIPPA to ensure privacy. Similarly,
+          PCI compliance aims to secure applications dealing with payments and credit
+          card information.
+      </p>
+      <p>
+          Many people rightfully distrust &#8220;phone-home&#8221; techniques for
+          software updates. Earlier in 2017, Vizio agreed to pay $2.2 million dollars
+          to settle charges related to the collection of user data from smart TVs
+          [<a data-scroll href="#Maheshwari17">Maheshwari17</a>]. Vizio gave no notice of the collection or tracking, and was
+          selling the data to third parties. A decentralized approach would prevent
+          this scenario.
+      </p>
+      <p>
+          As stated earlier, the blockchain is a <em>public </em>ledger. Meaning data
+          on the blockchain is available to anyone. Therefore, privacy remains a
+          challenge for blockchains. However, solutions exist and will be discussed
+          in Section V.
+      </p>
+
+      <h3>Interoperability</h3>
+      <p>
+          The IoT ecosystem hosts a slew of different manufacturers, operating
+          systems, versions, and communication protocols. This fragmentation leads to
+          poor interoperability between devices. Large companies must agree upon open
+          standards to remedy this problem. Fear of losing their competitive
+          advantage makes some hesitant to do so. On the contrary, public and open
+          blockchains offer a common platform for devices and developers.
+      </p>
+
+      <h3>Heavy Network Traffic</h3>
+      <p>
+          More and more devices generating more and more data creates large amounts
+          of traffic. Annual data generation for any given device will increase from
+          145 zeta-bytes in 2015 to 600 zeta-bytes by 2020. [<a data-scroll href="#Cisco16">Cisco16</a>]. This growing
+          traffic presents a problem for centralized cloud infrastructure on two
+          fronts: (1) some applications require low end-to-end latency, and (2)
+          centralized systems have a single point of failure.
+      </p>
+      <p>
+          IoT applications requiring low end-to-end latency include augmented
+          reality, speech recognition, computer vision, machine learning, and
+          decision making. Creating a network capable of supporting these
+          applications is critical.
+      </p>
+      <p>
+          As previously mentioned, centralized networks have single points of
+          failure. Single points of failure cause more concern as human life and
+          health depend more upon IoT. Ensuring the robustness of critical devices
+          like wireless enabled pacemakers will be paramount for IoT&#8217;s success
+          [<a data-scroll href="#Booth16">Booth16</a>].
+      </p>
+      <p>
+          In contrast, decentralized peer-to-peer networks and blockchains have no
+          single point of failure. But heavy traffic strains a network regardless of
+          architecture. How blockchains plan to deal with this will be discussed in
+          Section V.
+      </p>
+    </section>
+
+    <!-- SECTION III -->
+    <section id="what-is-blockchain">
+      <h2>III. WHAT IS THE BLOCKCHAIN?</h2>
+      <p>
+          The blockchain is a distributed immutable ledger first conceptualized by
+          the inventor of Bitcoin to solve the double spending problem. A problem
+          with digital cash where people can spend money multiple times. Companies
+          like PayPal solve this problem by recording transactions in a centralized
+          database. PayPal serves as a trusted intermediary, and its ledger a source
+          of truth.
+      </p>
+      <p>
+          Blockchain similarly enables the transfer of digital cash, but cuts out
+          middle-men like PayPal. The blockchain stores all transactions, rather than
+          a centralized database. The blockchain is <em>distributed</em>, meaning
+          each member of the network stores a complete copy of it. But why is it
+          called a blockchain?
+      </p>
+      <p>
+          Think of the blockchain as a log of records, where records are batched into
+          timestamped blocks. A unique hash identifies each block, and each block
+          references the hash of the previous block. This establishes a <em>chain of blocks</em>, 
+          or blockchain [<a data-scroll href="#Christidis16">Christidis16</a>]. Now we know where the name comes from, but what is a block?
+      </p>
+
+      <div class="frame">
+        <p class="caption">
+          <strong class="caption-label">Figure 2:</strong>
+          The two parts of a block
+        </p>
+        <img src="block.svg" alt="The two parts of a block">
+        <p class="caption">
+          <strong class="caption-label">Adapted from:</strong>
+          <a target="_blank" href="https://www.youtube.com/watch?v=PGTzuDG5jEA&t=547s">
+            https://www.youtube.com/watch?v=PGTzuDG5jEA&t=547s
+          </a>
+        </p>
+      </div>
+
+      <p>
+          Figure 2 illustrates the two parts of a block: (1) the header and (2) the
+          body. The block header contains important meta information like a timestamp
+          when the block was created, the hash of the previous block, and a hash of
+          all the transactions. Hashing this information together creates a unique
+          identifier for the block. The body of the block simply consists of raw
+          transaction data. The exact contents of a block depend upon implementation,
+          but those are the core components. We stated earlier blockchains are
+          immutable. Meaning they cannot change and are tamper-proof. Understanding
+          how blockchains store transactions illuminates their tamper-proof nature.
+      </p>
+      <p>
+        Each block stores transactions in a data structure known as a
+        <strong>Merkle tree</strong>. Hashes of each transaction make up the leaf
+        nodes of the tree. Hashing the concatenation of these hashes creates the
+        next level of the tree. This hashing process continues upward eventually
+        forming a <em>root hash</em>. The <strong>root hash </strong>acts a
+        &#8220;digital fingerpint&#8221; allowing nodes to quickly verify
+        transactions and detect tampering. In other words, every non-leaf node
+        contains the hash of its children. If someone were to add, delete, or
+        modify a transaction, the root hash would change. Figure 3 illustrates the
+        simplest Merkle tree, a binary Merkle tree.
+      </p>
+
+      <div class="frame">
+        <p class="caption">
+          <strong class="caption-label">Figure 3:</strong>
+          A binary merkle tree of transactions
+        </p>
+        <img src="binary-merkle-tree.svg" alt="A binary merkle tree">
+        <p class="caption">
+          <strong class="caption-label">Adapted from:</strong>
+          <a target="_blank" href="https://chrispacia.wordpress.com/2013/09/02/bitcoin-mining-explained-like-youre-five-part-2-mechanics/">
+            https://chrispacia.wordpress.com/2013/09/02/bitcoin-mining-explained-like-youre-five-part-2-mechanics/
+          </a>
+        </p>
+      </div>
+
+      <h3>How does the blockchain work?</h3>
+      <p>
+        To better understand how blockchains work, we must first understand more
+        about <em>asymmetric cryptography</em>. Asymmetric cryptography, also known
+        as public key encryption, uses pairs of public and private keys to encrypt
+        and decrypt data [<a data-scroll href="#Rouse16">Rouse16</a>]. A public key addresses each member of the
+        network, and members sign all transactions with a corresponding private
+        key. Once signed, members broadcast transactions to neighboring peers in
+        the network. Peers ensure the validity of transactions before further
+        broadcast, discarding any invalid transactions. A transaction propagates
+        across the network until all nodes validate it.
+      </p>
+      <p>
+        At a certain time, a node in the network packs up valid transactions into a
+        timestamped block. This node then broadcasts the block back to the network.
+        If valid, peers add the block to their chain. This process repeats for all
+        transactions.
+      </p>
+      <p>
+        The node which creates the block depends upon the <em>consensus algorithm</em>. 
+        The consensus algorithm determines how the
+        network agrees upon the state of the world and settles disputes. Bitcoin
+        uses a consensus algorithm known as Proof-of-Work (PoW). Creating blocks
+        through PoW is called <em>mining</em>. Mining involves a node solving a
+        computationally expensive puzzle. The miner who solves the puzzle first
+        creates the block and receives a reward of Bitcoins. Mining keeps the
+        network secure.
+      </p>
+      <p>
+          Ethereum also uses PoW, but will eventually switch to a less computationally expensive algorithm 
+          called Proof-of-Stake (PoS) [<a data-scroll href="#Zamfir15">Zamfir15</a>][<a data-scroll href="#CryptoCompare17">CryptoCompare17</a>]. Creating blocks through PoS 
+          might be called <em>virtual mining</em> [<a data-scroll href="#GitHub17a">GitHub17a</a>]. For more information about PoS, see 
+          Buterin &#8220;On Stake&#8221; [<a data-scroll href="#Buterin14a">Buterin14a</a>].
+      </p>
+      <p>
+          In addition to PoW and PoS, many other &#8220;proof-of-XXX&#8221;
+          algorithms exist. Tschorsch and Scheuermann provide a good overview in
+          &#8220;Bitcoin and Beyond: A Technical Survey on Decentralized Digital
+          Currencies&#8221; [<a data-scroll href="#Tschorsch16">Tschorsch16</a>]. Like many consensus algorithms exist, many
+          blockchains exist with varying attributes.
+      </p>
+
+      <h3>Public, Private, and Consortium Blockchains</h3>
+      <p>
+          Three taxonomies help in classifying blockchains: public, private, and
+          consortium. The difference between these taxonomies lies within the answers
+          to the following questions:
+      </p>
+      <ul>
+        <li>Who has read access?</li>
+        <li>Who has write access?</li>
+        <li>Who verifies transactions?</li>
+      </ul>
+      <p>
+          We will begin our discussion with public blockchains, as they first came
+          into existence.
+      </p>
+
+      <h4>Public Blockchains</h4>
+      <p>
+          Public blockchains allow anyone to read, write, and verify transactions.
+          Every node verifying each transaction keeps public-chains extremely secure,
+          but at the cost of speed. No single entity owns or controls public
+          blockchains. The public provides all the infrastructure; therefore, costs
+          remain low. We can consider public blockchains fully decentralized, thus
+          benefit from network effects.
+      </p>
+
+      <h4>Private Blockchains</h4>
+      <p>
+          Private blockchains restrict write permissions to one entity. Private
+          blockchains may restrict read permissions to a varying degree depending
+          upon the application. The ability to restrict read permissions grants more
+          privacy than public blockchains. One entity owns and controls the
+          blockchain, thus rules and transactions can easily change when desired.
+          Costs depend upon implementation and tend to be higher than pubic
+          counterparts. Only a few nodes verify each transaction, making transactions
+          cheaper and faster compared to public blockchains. We can consider private
+          blockchains fully centralized, thus not able to benefit from network
+          effects.
+      </p>
+
+      <h4>Consortium Blockchains</h4>
+      <p>
+          Consortium blockchains are like a hybrid between public and private
+          blockchains. Like private blockchains, read permissions may be public or
+          restricted to a varying degree. Write permissions are restricted, but may
+          be open to a subset of the public. A pre-determined group of nodes verify
+          transactions [<a data-scroll href="#Thompson16">Thompson16</a>]. Rather than one entity or the public, consortium
+          blockchains operate under the control and guidance of a group. Consortium
+          blockchains offer the same speed and privacy of private blockchains. We can
+          consider consortium blockchains partially decentralized.
+      </p>
+      <p>
+          This paper focuses on public over private and consortium blockchains
+          because of network effects like greater interoperability and lower costs
+          [<a data-scroll href="#Jentzsch17">Jentzsch17</a>]. Anyone can create an application on public blockchains with
+          permissions built in from the start. This means anyone can interface,
+          integrate, and build on top of pre-existing applications. In addition to
+          greater interoperability, public blockchains also provide lower costs. One
+          can deploy their application to the &#8220;blockchain cloud&#8221; where
+          other public members provide the necessary computation, storage, and
+          networking resources. Countless public blockchain implementations exist,
+          but this paper focuses on Ethereum.
+      </p>
+
+      <h3>Ethereum, Smart Contracts, and Dapps</h3>
+      <p>
+          Ethereum grew out of Vitalik Buterin&#8217;s frustration with using Bitcoin
+          for &#8220;more than just money&#8221; [<a data-scroll href="#Buterin14b">Buterin14b</a>]. Buterin worked closely
+          with several projects, each suffering from the same problem&#8212;a
+          fragmented ecosystem.
+      </p>
+      <p>
+          Ethereum is Buterin&#8217;s attempt to create a common platform for those
+          projects to build on. Ethereum shares many features with Bitcoin, with one
+          key difference. Ethereum features a Turing complete programming language.
+          Turing-complete meaning programmers can compute anything that is
+          computable. These programs are called <em>smart-contracts</em>.
+          Smart-contracts live on the blockchain and govern the rules of interaction
+          and exchange.
+      </p>
+      <p>
+          Ethereum offers three programming languages to create smart-contracts with [<a data-scroll href="#EthDocs17">EthDocs17</a>]:
+      </p>
+      <ol>
+        <li>Solidity which is like JavaScript</li>
+        <li>Serpent which is like Python</li>
+        <li>And LLL (Lisp Like Language) which is a low-level language like Assembly</li>
+      </ol>
+      <p>
+          Offering familiar languages reduces the learning curve for new developers.
+          Applications written with smart-contracts are called decentralized
+          applications, or <strong>Dapps</strong>. Smart-contracts make up the
+          &#8220;backend&#8221; logic of a Dapp. For the &#8220;frontend&#8221;, a
+          developer uses standard technologies like HTML, CSS, and JavaScript.
+          Traditional web apps require server side code, whereas Dapps require
+          smart-contract code. To browse and interact with Dapps, people download a
+          special browser called <em>Mist</em>. Soon browser extensions will allow
+          people to access Dapps in standard browsers like Chrome and FireFox
+          [<a data-scroll href="#MetaMask17">MetaMask17</a>].
+      </p>
+      <p>
+          In addition to smart-contracts, Ethereum introduces two more technologies:
+          Swarm for decentralized storage and Whisper for decentralized messaging
+          [<a data-scroll href="#Gerring14">Gerring14</a>]. Swarm allows for storage of static assets like frontend code,
+          images, and video. While Whisper lets Dapps communicate with each other.
+          Together these three technologies fulfill Ethereum&#8217;s vision as a
+          &#8220;world computer&#8221;.
+      </p>
+      <p>
+          IBM states &#8220;to perform the functions of traditional IoT solutions
+          without a centralized broker, any decentralized approach must support three
+          foundational functions:&#8221; [<a data-scroll href="#Pureswaran15">Pureswaran15</a>]
+      </p>
+
+      <ol>
+        <li>Peer-to-Peer messaging (Whisper)</li>
+        <li>Distributed file sharing (Swarm)</li>
+        <li>Autonomous device coordination (Smart-contracts)</li>
+      </ol>
+
+      <p>
+          Ethereum supports each foundational function making a wide variety of IoT
+          applications possible.
+      </p>
+    </section>
+
+    <!-- SECTION IV -->
+    <section id="iot-applications">
+      <h2>IV. APPLICATIONS TO IOT</h2>
+      <p>
+          We now shift our focus to three IoT applications utilizing the Ethereum
+          blockchain. The first two applications, a semi-autonomous washing machine,
+          and smart-locks or &#8220;slocks,&#8221; have real world implementations.
+          The third example, supply chains, serves to exemplify the potential of
+          blockchains.
+      </p>
+
+      <h3>Semi-Autonomous Washing Machine</h3>
+      <p>
+          IBM states as IoT scales decentralized networks have the potential to
+          reduce infrastructure and maintenance costs removing single points of
+          failure that could exist in traditional centralized networks
+          [<a data-scroll href="#Pureswaran15">Pureswaran15</a>]. As a proof-of-concept,
+          IBM and Samsung created a <em>semi-autonomous</em> washing machine. The washing machine could
+          download its own software updates, order detergent when it was low, order
+          servicing and replacement parts, and negotiate energy usage among
+          neighboring devices. All while keeping the owner informed by broadcasting
+          to his or her mobile device. This application demonstrates the power of
+          automation through secure machine-to-machine payments.
+      </p>
+      <h3>Slock.it</h3>
+      <p>
+          Slock.it introduces another interesting blockchain application for IoT with
+          the idea of smart-locks. Many people today have a lot of property that goes
+          unused most of the time. Some of these items includes cars, bikes, washing
+          machines, and houses. Slock.it allows people to easily sell, rent, and
+          share their property, turning underutilized property into revenue
+          generating assets [<a data-scroll href="#Jentzsch15">Jentzsch15</a>]. Services like Airbnb already allow people
+          to rent out their house, but for smaller things like renting out a bike,
+          many people may not bother with the hassle. With Slock.it you can lock your
+          bike in a public area with a &#8220;slock&#8221; or <em>smart-lock</em>.
+          When someone wants to rent it out they pay a deposit, then get their
+          deposit back, minus the cost to rent, when they&#8217;re done using it. A
+          <em>smart-contract</em> defines both the deposit and cost to rent.
+      </p>
+      <p>
+        Slock.it demonstrates the power of the blockchain to unlock the 
+        <em>sharing economy</em>.An economy characterized by people owning less,
+        and sharing more. With a finite resource planet, sharing will become more
+        important over time.
+      </p>
+
+      <h3>Supply Chains</h3>
+      <p>
+          Blockchains also have the power to revolutionize our supply chains. IBM
+          illustrates this example in an interactive web demo [<a data-scroll href="#IBM17">IBM17</a>]. Imagine
+          shipping frozen cherries to a grocery store. To start each carrier in the
+          supply chain agrees to a smart-contract that if the frozen cherries exceed
+          32&#176; F, then the carrier will be held responsible for any losses.
+      </p>
+      <p>
+          First, a factory packages the frozen cherries equipped with a temperature
+          sensor. The temperature sensor stores data locally, transmitting data to
+          the blockchain at each exchange. The factory then ships the frozen cherries
+          across the ocean. The exchange and initial temperature is recorded in the
+          blockchain. During shipment, the temperate remains below 32&#176;. The ship
+          then arrives at land and transfers the frozen cherries to a truck. Again,
+          the temperature and exchange is recorded in the blockchain.
+      </p>
+      <p>
+          During shipment, the truck&#8217;s cooling equipment malfunctions and the
+          temperature of the cherries exceeds 32&#176; F. This flags the grocery
+          store to inspect the cherries upon arrival. The grocery store finds the
+          cherries are ruined and charges the trucking company for all losses.
+      </p>
+      <p>
+          Instead of having separate records, each member of the supply chain has a
+          single source of truth, the blockchain. This makes handling disputes and
+          determining provenance easy. Like the semi-autonomous washing machine, this
+          process could be automated with machine-to-machine communication at each
+          exchange. Easily determining provenance, or source of origin, brings
+          transparency and trust to the marketplace. With a blockchain, a consumer
+          can easily verify a product is organic, sustainably-harvested,
+          hand-crafted, etc. [<a data-scroll href="#Baker15">Baker15</a>]. For these reasons, blockchains make sense for
+          supply chains.
+      </p>
+    </section>
+  
+    <!-- SECTION V -->
+    <section id="blockchain-challenges">
+      <h2>V. BLOCKCHAIN CHALLENGES</h2>
+      <p>
+          This section discusses the challenges systemic to all <em>public </em>
+          blockchains. Private and consortium blockchains do not share these same
+          challenges, and will not be discussed. We examine how Ethereum plans to
+          overcome these challenges, as it is the major public blockchain player.
+      </p>
+      <p>
+          For blockchain to become a viable solution for IoT it must overcome two
+          main challenges: (1) scalability and (2) privacy. We can further divide
+          scalability into two sub-challenges: processing power and storage. We begin
+          our examination with processing power.
+      </p>
+
+      <h3>Processing Power</h3>
+      <p>
+          Mainstream centralized payment processors like Visa average 2,000
+          transactions per second (tps) [<a data-scroll href="#Visa17">Visa17</a>]. Up to 56,000 tps during busy times
+          [<a data-scroll href="#Visa15">Visa15</a>]. On the other hand, Bitcoin handles 7 tps while confirming
+          transactions takes 10 minutes or more [<a data-scroll href="#Croman16">Croman16</a>]. Ethereum struggles with
+          similar rates, but remains ambitious. With future releases of Ethereum,
+          Vitalik Buterin aims to compete with Visa on nothing but consumer laptops
+          [<a data-scroll href="#Buterin16a">Buterin16a</a>]. Examining two of Ethereum&#8217;s approaches to scalability
+          illuminates Buterin&#8217;s bold claims. Two main ideas exist: <strong>sharding</strong> and <strong>state-channels</strong>
+      </p>
+
+      <h4>Sharding</h4>
+      <p>
+        Currently every node on the network must validate each transaction.
+        <strong>Sharding</strong> proposes only a subset of nodes validate each
+        transaction [<a data-scroll href="#GitHub17b">GitHub17b</a>]. Sharding works by dividing Ethereum&#8217;s
+        blockchain state into <em>shards</em>. Each shard contains various
+        accounts, applications, and transactions. Accounts and applications live in
+        one shard, but can talk to other shards when necessary. The protocol then
+        assigns a randomly selected subset of nodes to validate all the
+        transactions for a given shard.
+      </p>
+
+      <h4>State Channels</h4>
+      <p>
+        <strong>State channels</strong>, or off-chain networks, increases processing power by moving
+        <em>state-altering</em> interactions between two participants
+        <em>off</em> the chain. Jeff Coleman describes how state-channels work in three basic steps [<a data-scroll href="#Coleman15">Coleman15</a>]:
+      </p>
+      <ol>
+        <li>Lock part of the blockchain state</li>
+        <li>Update the state amongst the participants themselves</li>
+        <li>Submit the new state back to the blockchain</li>
+      </ol>
+      <p>
+          The idea behind state-channels comes from Bitcoin&#8217;s lightning
+          network. A solution for &#8220;lightning-fast&#8221; payments on the
+          Bitcoin network [<a data-scroll href="#LightningNetwork17">LightningNetwork17</a>]. The Raiden Network implements the
+          same idea for Ethereum. As state-channels scale linearly with the number of
+          participants, the Raiden Network claims to support up to 1,000,000 tps
+          [<a data-scroll href="#RaidenNetwork17">RaidenNetwork17</a>]. In addition to increasing the number of transactions per
+          second, state-channels also increase privacy because off-chain transactions
+          are not recorded in the public ledger.
+      </p>
+
+      <h3>Storage</h3>
+      <p>
+          As blockchains scale, storage presents another big problem. Keep in mind,
+          each full-node in the network must contain an entire copy of the
+          blockchain. The blockchain grows quite large as it contains a record of all
+          the transactions on the network. As of April 2017, the bitcoin blockchain
+          requires 112 GB of storage space and grows by about 5 MB per hour
+          [<a data-scroll href="#Blockchain17">Blockchain17</a>]. If Bitcoin were to process 2,000 tps, then the blockchain
+          would grow by several tera-bytes per year. If the blockchain were to grow
+          to a large number like 100 TB, then only large businesses would run
+          full-nodes posing a centralization risk [<a data-scroll href="#GitHub17c">GitHub17c</a>]. Two possible solutions
+          to reduce storage exist: <strong>state-tree pruning</strong> and 
+          <strong>blockchain rent</strong>.
+      </p>
+
+      <h4>State-Tree Pruning</h4>
+      <p>
+          To understand state-tree pruning, we first need to better understand
+          how Ethereum stores data in the blockchain. Every block contains the
+          &#8220;state root&#8221;. A hash of a special Merkle tree that stores the
+          entire state of the system: all account balances, smart-contract code, etc
+          [<a data-scroll href="#Buterin15">Buterin15</a>]. Blocks differ little between state changes.
+          Therefore, to save space state trees use references to data that remains
+          the same between state transitions.
+      </p>
+
+      <div class="frame">
+        <p class="caption">
+          <strong class="caption-label">Figure 4:</strong>
+          A state transition between two blocks
+        </p>
+        <img src="blockchain-state-transition.svg" alt="A diagram demonstrating a state transition between two blocks">
+        <p class="caption">
+          <strong class="caption-label">Adapted from:</strong>
+          <a target="_blank" href="https://blog.ethereum.org/2015/06/26/state-tree-pruning/">
+            https://blog.ethereum.org/2015/06/26/state-tree-pruning/
+          </a>
+        </p>
+      </div>
+
+      <p>
+          Figure 4 shows account 14&#8217;s balance increase from 49 to 71 between
+          two blocks. Block 154&#8217;s state tree contains references to the
+          previous state tree when unchanged. <strong>State tree pruning </strong>
+          mandates a counter keeps track of the number of references to each node in
+          the tree. When the number of references to a node reaches zero, we sentence
+          the node to &#8220;death row&#8221;. If nothing references that node again
+          within a certain number of blocks, we delete the node from the database.
+          This way we only store nodes part of the current state and recent history,
+          but not history older than a certain number of blocks. This approach
+          resembles garbage collection in programming languages and tree-based
+          version control systems like Git.
+      </p>
+
+      <h4>Blockchain Rent</h4>
+      <p>
+          Another approach to reducing storage is blockchain rent. Currently users
+          pay a one-time blockchain storage fee, with a one-time refund for clearing
+          that storage. <strong>Blockchain rent</strong> proposes to charge users for storage over
+          time. When an account&#8217;s balance reaches zero and can no longer afford
+          rent, the account is deleted. This solves the problem of
+          &#8220;dust&#8221;. <em>Dust</em> is the accumulation of accounts with
+          <strong>near zero</strong> balance not worth the transaction fee to send.
+          Some estimate &#8220;dust&#8221; makes up most of the Bitcoin blockchain
+          [<a data-scroll href="#Buterin14c">Buterin14c</a>]. While blockchain rent solves the problem of
+          &#8220;dust,&#8221; some warn of possible dangers of deleting
+          smart-contracts [Borah15].
+      </p>
+      <p>
+          Like programs today, smart-contracts will depend on other smart-contracts
+          in the form of &#8220;libraries&#8221; [<a data-scroll href="#SolidityDocs17">SolidityDocs17</a>]. For example, a
+          smart-contract might rely on another smart-contract for some tiny utility
+          function. Some of these dependency contracts may be forgotten about over
+          time causing active smart-contracts to fail. Due to this concern, a concept
+          of reviving deleted contracts was introduced [<a data-scroll href="#Buterin16b">Buterin16b</a>]. Suppose the
+          transaction that deletes the smart-contract generates a receipt in that
+          block. Then anyone could &#8220;resurrect&#8221; the contract by providing
+          the necessary data and an appropriate fee [<a data-scroll href="#Buterin16b">Buterin16b</a>]. State-tree pruning
+          and blockchain rent are only two ideas to reduce the size of the
+          blockchain. Many more ideas exist as Ethereum Improvement Proposals on
+          GitHub [<a data-scroll href="#GitHub17d">GitHub17d</a>].
+      </p>
+
+      <h3>Privacy</h3>
+      <p>
+          In addition to scalability, privacy is the other big issue with public
+          blockchains. Every device signs each transaction with their public key,
+          which exists in the open blockchain. One can analyze this data, identify
+          patterns, and create connections between public keys to make informed
+          inferences about their actual identities [<a data-scroll href="#Christidis16">Christidis16</a>]. Two solutions are
+          <strong>ring signatures </strong>and <strong>zk-SNARKs</strong>.
+      </p>
+
+      <h4>Ring Signatures</h4>
+      <p>
+          Ring signatures grant users anonymity with respect to a group. The
+          transaction, sender and recipient addresses remain public, but the group
+          obscures the link between them. This gives users
+          <em>plausible deniability</em>. Plausible deniability means no one can
+          definitively link a user to a given address or transaction. To create a
+          ring signature, a group of block chain users come together and each sign a
+          &#8220;ring&#8221; with their public key. Ring signatures can only be
+          &#8220;completed&#8221; or verified correct by some secret information,
+          usually the user&#8217;s private key [<a data-scroll href="#Mercer16a">Mercer16a</a>]. The contract that
+          &#8220;mixes&#8221; the users&#8217; public keys together and creates the
+          ring signature can be called the <em>mixing contract</em>.
+      </p>
+      <p>
+        There is also an upgraded version of a ring signature called a
+        <strong>linkable ring signature</strong>. Linkable ring signatures have the
+        additional property of allowing a blockchain user to create a tag that
+        allows third parties to &#8220;complete&#8221; the ring. The tag
+        <em>links</em> back to the original public key, but ensures the identity
+        remains unknown with respect to the group public keys. Figure 5
+        demonstrates a linkable ring signature in a mixing contract. Rebekah Mercer
+        discusses ring signatures in greater detail in &#8220;Privacy on the
+        Blockchain: Unique Ring Signatures&#8221; and at Nicolas Courtois&#8217;
+        cryptography blog [<a data-scroll href="#Mercer16a">Mercer16a</a>][<a data-scroll href="#Mercer16b">Mercer16b</a>].
+      </p>
+
+      <div class="frame">
+        <p class="caption">
+          <strong class="caption-label">Figure 5:</strong>
+          A linkable ring signature
+        </p>
+        <img src="mixing-contract.svg" alt="A linkable ring signature">
+        <p class="caption">
+          <strong class="caption-label">Adapted from:</strong>
+          <a target="_blank" href="http://blog.bettercrypto.com/?p=3227">
+            http://blog.bettercrypto.com/?p=3227
+          </a>
+        </p>
+      </div>
+
+      <h4>zk-SNARKs</h4>
+      <p>
+          A Zero-Knowledge Succinct Non-interactive ARgument of Knowledge or
+          zk-SNARK, proves some fact without revealing any information. zk-SNARKs are
+          succinct meaning the proof is short and quick to verify. For example, a
+          zk-SNARK would allow a person to prove to a hospital they have appropriate
+          medical coverage without revealing any insurance information. A protocol
+          named Zcash uses zk-SNARKs to allow miners to verify encrypted
+          transactions, without revealing the transaction amount, sender or recipient
+          addresses.
+      </p>
+      <p>
+          Zcash solves the problem of putting private data on public blockchains.
+          While quick to verify, zk-SNARKs take several minutes to produce and are
+          computationally expensive [<a data-scroll href="#Ben-Sasson15">Ben-Sasson15</a>]. Reducing this time requires more
+          research.
+      </p>
+      <p>
+          A final point about privacy is the blockchain is not meant for general data
+          storage. This is the role of technologies like Swarm or IPFS [<a data-scroll href="#IPFS17">IPFS17</a>]. If
+          data needs to be private, then combine the blockchain with existing
+          solutions like encryption and private databases. For example, storing the
+          address of an encrypted file on the blockchain ensures only select people
+          could view the file&#8217;s contents. Alternatively, storing references to data in private databases is appropriate in sensitive
+          contexts like health care.
+      </p>
+    </section>
+
+    <!-- SECTION VI -->
+    <section id="conclusion">
+      <h2>VI. CONCLUSION</h2>
+      <p>
+          IoT&#8217;s future success depends upon examining traditional approaches.
+          The blockchain poses as a possible alternative by providing greater
+          decentralization, lower costs, enhanced security, a common open-source
+          platform, and robust network. While the blockchain was created for the
+          purposes of Bitcoin, it is now being adapted for new and exciting platforms
+          like Ethereum.
+      </p>
+      <p>
+          Ethereum ambitiously plans to become a &#8220;world computer&#8221;
+          creating a myriad of possibilities. These possibilities include
+          applications for IoT like smart-locks, more autonomous machines, and
+          enhanced supply chains. These applications have profound implications for
+          the economy. Smart-locks will usher in the &#8220;sharing economy&#8221;.
+          More autonomous machines will produce an &#8220;economy of things&#8221;.
+          Supply chains will have greater transparency and less friction.
+      </p>
+      <p>
+          However, the blockchain is still a young technology with many problems that
+          need solving. Problems that seem surmountable. Ethereum is hard at work
+          with promising, yet un-proven solutions. Industry interest will create more
+          private and consortium blockchains, while Ethereum leads the way for public
+          chains. Future IoT networks need greater decentralization and we&#8217;re
+          only beginning to understand the blockchain&#8217;s capability. Only time
+          will tell if blockchain is the answer.
+      </p>
+    </section>
+
+    <section>
+      <h2>REFERENCES</h2>
+      <ul>
+        <li id="Cisco16">
+          [Cisco16] &#8220;Cisco Global Cloud Index: Forecast and Methodology,
+          2015&#8211;2020,&#8221; Cisco, 2016, p. 3,
+          <a
+              href="http://www.cisco.com/c/dam/en/us/solutions/collateral/service-provider/global-cloud-index-gci/white-paper-c11-738085.pdf"
+              target="_blank"
+          >
+              http://www.cisco.com/c/dam/en/us/solutions/collateral/service-provider/global-cloud-index-gci/white-paper-c11-738085.pdf
+          </a>
+        </li>
+        <li id="Newman17">
+          [Newman17] Peter Newman, &#8220;THE INTERNET OF THINGS 2017 REPORT: How the
+          IoT is improving lives to transform the world,&#8221; Business Insider, 12
+          Jan 2017,
+          <a
+              href="http://www.businessinsider.com/the-internet-of-things-2017-report-2017-1"
+              target="_blank"
+          >
+              http://www.businessinsider.com/the-internet-of-things-2017-report-2017-1
+          </a>
+        </li>
+        <li id="Brody14">
+          [Brody14] Paul Brody, &#8220;The Internet of Things will cost companies
+          more than they're ready for,&#8221; VentureBeat, 24 Aug 2014,
+          <a
+              href="https://venturebeat.com/2014/08/24/the-internet-of-things-will-cost-companies-more-than-theyre-ready-for/"
+              target="_blank"
+          >
+              https://venturebeat.com/2014/08/24/the-internet-of-things-will-cost-companies-more-than-theyre-ready-for/
+          </a>
+        </li>
+        <li id="Osborne15">
+          [Osborne15] Charlie Osborne, &#8220;Fiat Chrysler recalls 8,000 extra Jeeps
+          over remote control hacking worries,&#8221; ZDNet, 07 Sep 2015,
+          <a
+              href="http://www.zdnet.com/article/eight-obstacles-to-overcome-in-your-digital-transformation-journey/"
+              target="_blank"
+          >
+              http://www.zdnet.com/article/eight-obstacles-to-overcome-in-your-digital-transformation-journey/
+          </a>
+        </li>
+        <li id="Greenberg15">
+          [Greenberg15] Andy Greenberg, &#8220;Hackers Can Disable a Sniper
+          Rifle&#8212;Or Change Its Target,&#8221; Wired, 29 Jul 2015,
+          <a
+              href="https://www.wired.com/2015/07/hackers-can-disable-sniper-rifleor-change-target/"
+              target="_blank"
+          >
+              https://www.wired.com/2015/07/hackers-can-disable-sniper-rifleor-change-target/
+          </a>
+        </li>
+        <li id="Kovacs15">
+          [Kovacs15] Eduard Kovacs, &#8220;FDA Issues Alert Over Vulnerable Hospira
+          Drug Pumps,&#8221; SecurityWeek, 03 Aug 2015,
+          <a
+              href="http://www.securityweek.com/fda-issues-alert-over-vulnerable-hospira-drug-pumps"
+              target="_blank"
+          >
+              http://www.securityweek.com/fda-issues-alert-over-vulnerable-hospira-drug-pumps
+          </a>
+        </li>
+        <li id="Maheshwari17">
+          [Maheshwari17] Sapna Maheshwari, &#8220;Is Your Vizio Television Spying on
+          You? What to Know,&#8221; The New York Times, 07 Feb 2017,
+          <a
+              href="https://www.nytimes.com/2017/02/07/business/vizio-television-vizio-collected-viewers-habits-consent.html"
+              target="_blank"
+          >
+              https://www.nytimes.com/2017/02/07/business/vizio-television-vizio-collected-viewers-habits-consent.html
+          </a>
+        </li>
+        <li id="Booth16">
+          [Booth16] Alison Booth, &#8220;Smart hearts and the Internet of
+          Things,&#8221; Naked Security, 08 Jan 2016,
+          <a
+              href="https://nakedsecurity.sophos.com/2016/01/08/smart-hearts-and-the-internetofthings/"
+              target="_blank"
+          >
+              https://nakedsecurity.sophos.com/2016/01/08/smart-hearts-and-the-internetofthings/
+          </a>
+        </li>
+        <li id="Christidis16">
+          [Christidis16] Konstantinos Christidis, Michael Devetsikiotis,
+          &#8220;Blockchains and Smart Contracts for the Internet of Things,&#8221; IEEE Access Vol. 4, 10 May 2016, pp. 2292
+          &#8211; 2303,
+          <a href="http://ieeexplore.ieee.org/document/7467408/" target="_blank">
+              http://ieeexplore.ieee.org/document/7467408/
+          </a>
+        </li>
+        <li id="Rouse16">
+          [Rouse16] Margaret Rouse, Michael Cobb, &#8220;asymmetric cryptography
+          (public key cryptography),&#8221; TechTarget, June 2016,
+          <a
+              href="http://searchsecurity.techtarget.com/definition/asymmetric-cryptography"
+              target="_blank"
+          >
+              http://searchsecurity.techtarget.com/definition/asymmetric-cryptography
+          </a>
+        </li>
+        <li id="Zamfir15">
+          [Zamfir15] Vlad Zamfir, &#8220;Introducing Casper &#8220;the Friendly
+          Ghost&#8221;,&#8221; Ethereum Blog, 01 Aug 2015,
+          <a
+              href="https://blog.ethereum.org/2015/08/01/introducing-casper-friendly-ghost/"
+              target="_blank"
+          >
+              https://blog.ethereum.org/2015/08/01/introducing-casper-friendly-ghost/
+          </a>
+        </li>
+        <li id="CryptoCompare17">
+          [CryptoCompare17] &#8220;The Ethereum releases of Frontier, Homestead,
+          Metropolis and Serenity.,&#8221; CryptoCompare, 20 Apr 2017,
+          <a
+              href="https://www.cryptocompare.com/coins/guides/the-ethereum-releases-of-frontier-homestead-metropolis-and-serenity/"
+              target="_blank"
+          >
+              https://www.cryptocompare.com/coins/guides/the-ethereum-releases-of-frontier-homestead-metropolis-and-serenity/
+          </a>
+        </li>
+        <li id="GitHub17a">
+          [GitHub17a] &#8220;Proof of Stake FAQ,&#8221; GitHub, 01 May 2017,
+          <a href="https://github.com/ethereum/wiki/wiki/Proof-of-Stake-FAQ" target="_blank">
+              https://github.com/ethereum/wiki/wiki/Proof-of-Stake-FAQ
+          </a>
+        </li>
+        <li id="Buterin14a">
+          [Buterin14a] Vitalik Buterin, &#8220;On Stake,&#8221; Ethereum Blog, 05
+          July 2014,
+          <a href="https://blog.ethereum.org/2014/07/05/stake/" target="_blank">
+              https://blog.ethereum.org/2014/07/05/stake/
+          </a>
+        </li>
+        <li id="Tschorsch16">
+          [Tschorsch16] Florian Tschorsch, Bj&#246;rn Scheuermann, &#8220;Bitcoin and
+          Beyond: A Technical Survey on Decentralized Digital Currencies,&#8221; IEEE
+          Communications Surveys &amp; Tutorials Vol. 18 Issue 3, 02 Mar 2016, pp.
+          2084 &#8211; 2123,
+          <a href="http://ieeexplore.ieee.org/document/7423672/" target="_blank">
+              http://ieeexplore.ieee.org/document/7423672/
+          </a>
+        </li>
+        <li id="Thompson16">
+          [Thompson16] Collin Thompson, &#8220;The difference between a Private,
+          Public &amp; Consortium Blockchain.,&#8221; Blockchain Daily News, 26 Oct
+          2016,
+          <a
+              href="http://www.blockchaindailynews.com/The-difference-between-a-Private-Public-Consortium-Blockchain_a24681.html"
+              target="_blank"
+          >
+              http://www.blockchaindailynews.com/The-difference-between-a-Private-Public-Consortium-Blockchain_a24681.html
+          </a>
+        </li>
+        <li id="Jentzsch17">
+          [Jentzsch17] Christoph Jentzsch, &#8220;Public vs Private chain,&#8221;
+          Slock.it Blog, 02 Jan 2017,
+          <a href="https://blog.slock.it/public-vs-private-chain-7b7ca45044f" target="_blank">
+              https://blog.slock.it/public-vs-private-chain-7b7ca45044f
+          </a>
+        </li>
+        <li id="Buterin14b">
+          [Buterin14b] Vitalik Buterin, &#8220;Ethereum: Now Going Public,&#8221;
+          Ethereum Blog, 23 Jan 2014,
+          <a href="https://blog.ethereum.org/2014/01/23/ethereum-now-going-public/" target="_blank">
+              https://blog.ethereum.org/2014/01/23/ethereum-now-going-public/
+          </a>
+        </li>
+        <li id="EthDocs17">
+          [EthDocs17] &#8220;Ethereum high level languages,&#8221; Ethereum Homestead
+          0.1 documentation, 10 Feb 2017,
+          <a
+              href="http://ethdocs.org/en/latest/contracts-and-transactions/contracts.html#ethereum-high-level-languages"
+              target="_blank"
+          >
+              http://ethdocs.org/en/latest/contracts-and-transactions/contracts.html#ethereum-high-level-languages
+          </a>
+        </li>
+        <li id="MetaMask17">
+          [MetaMask17] &#8220;Metamask: Brings Ethereum to your browser,&#8221;
+          MetaMask, 2017, <a href="https://metamask.io/" target="_blank">https://metamask.io/</a>
+        </li>
+        <li id="Gerring14">
+          [Gerring14] Taylor Gerring, &#8220;building the decentralized web
+          3.0,&#8221; Ethereum Blog, 18 Aug 2014,
+          <a href="https://blog.ethereum.org/2014/08/18/building-decentralized-web/" target="_blank">
+              https://blog.ethereum.org/2014/08/18/building-decentralized-web/
+          </a>
+        </li>
+        <li id="Pureswaran15">
+          [Pureswaran15] Veena Pureswaran, Sanjay Pannikar, Sumabala Nair,
+          &#8220;Empowering the edge: Practical insights on a decentralized Internet
+          of Things,&#8221; IBM, April 2015,
+          <a
+              href="https://www-935.ibm.com/services/us/gbs/thoughtleadership/empoweringedge/"
+              target="_blank"
+          >
+              https://www-935.ibm.com/services/us/gbs/thoughtleadership/empoweringedge/
+          </a>
+        </li>
+        <li id="Jentzsch15">
+          [Jentzsch15] Christoph Jentzsch, &#8220;Slock.it DAO demo at Devcon1: IoT +
+          Blockchain,&#8221; YouTube, 13 Nov 2015,
+          <a href="https://www.youtube.com/watch?v=49wHQoJxYPo" target="_blank">
+              https://www.youtube.com/watch?v=49wHQoJxYPo
+          </a>
+        </li>
+        <li id="IBM17">
+          [IBM17] &#8220;IBM Watson IoT &#8211; Private Blockchain,&#8221; IBM, 2017,
+          <a
+              href="https://www.ibm.com/internet-of-things/platform/private-blockchain/"
+              target="_blank"
+          >
+              https://www.ibm.com/internet-of-things/platform/private-blockchain/
+          </a>
+        </li>
+        <li id="Baker15">
+          [Baker15] Jessi Baker, &#8220;Jessi Baker: Blockchain Could Track your Fish
+          Supper | WIRED Retail | WIRED,&#8221; YouTube, 07 Dec 2015,
+          <a href="https://www.youtube.com/watch?v=NCDhPfhWSig" target="_blank">https://www.youtube.com/watch?v=NCDhPfhWSig</a>
+        </li>
+        <li id="Visa17">
+          [Visa17] &#8220;Visa USA | Small Business Retial,&#8221; Visa, 2017,
+          <a
+              href="https://usa.visa.com/run-your-business/small-business-tools/retail.html"
+              target="_blank"
+          >
+              https://usa.visa.com/run-your-business/small-business-tools/retail.html
+          </a>
+        </li>
+        <li id="Visa15">
+          [Visa15] &#8220;Visa Inc. at a Glance,&#8221; Visa, Jun 2015, pp. 1 &#8211;
+          2,
+          <a
+              href="https://usa.visa.com/dam/VCOM/download/corporate/media/visa-fact-sheet-Jun2015.pdf"
+              target="_blank"
+          >
+              https://usa.visa.com/dam/VCOM/download/corporate/media/visa-fact-sheet-Jun2015.pdf
+          </a>
+        </li>
+        <li id="Croman16">
+          [Croman16] Kyle Croman, Christian Decker, Ittay Eyal, Adem Efe Gencer, Ari
+          Juels, Ahmed Kosba, Andrew Miller, Prateek Saxena, Elaine Shi, Emin
+          G&#252;n Sirer, Dawn Song, Roger Wattenhofer, &#8220;On Scaling
+          Decentralized Blockchains,&#8221; Lecture Notes in Computer Science Vol.
+          9604, 31 Aug 2016, pp. 106 &#8211; 125,
+          <a href="https://link.springer.com/chapter/10.1007/978-3-662-53357-4_8" target="_blank">
+              https://link.springer.com/chapter/10.1007/978-3-662-53357-4_8
+          </a>
+        </li>
+        <li id="Buterin16a">
+          [Buterin16a] Vitalik Buterin, &#8220;Ethereum: Platform Review:
+          Opportunities and Challenges for Private and Consortium Blockchains,&#8221;
+          R3, 02 Jun 2016,
+          <a href="http://www.r3cev.com/blog/2016/6/2/ethereum-platform-review" target="_blank">
+              http://www.r3cev.com/blog/2016/6/2/ethereum-platform-review
+          </a>
+        </li>
+        <li id="GitHub17b">
+          [GitHub17b] &#8220;Sharding FAQ,&#8221; GitHub, 16 Mar 2017,
+          <a href="https://github.com/ethereum/wiki/wiki/Sharding-FAQ" target="_blank">
+              https://github.com/ethereum/wiki/wiki/Sharding-FAQ
+          </a>
+        </li>
+        <li id="Coleman15">
+          [Coleman15] Jeff Coleman, &#8220;State Channels,&#8221; 06 Nov 2015,
+          <a href="http://www.jeffcoleman.ca/state-channels/" target="_blank">
+              http://www.jeffcoleman.ca/state-channels/
+          </a>
+        </li>
+        <li id="LightningNetwork17">
+          [LightningNetwork17] &#8220;Lightning Network: Scalable, Instant
+          Bitcoin/Blockchain Transactions,&#8221; Lightning Network, 2017, 
+          <a href="https://lightning.network/" target="_blank">https://lightning.network/</a>
+        </li>
+        <li id="RaidenNetwork17">
+          [RaidenNetwork17] &#8220;Raiden Network: High speed asset transfers for
+          Ethereum,&#8221; Raiden Network, 2017, 
+          <a href="http://raiden.network/" target="_blank">http://raiden.network/</a>
+        </li>
+        <li id="Blockchain17">
+          [Blockchain17] &#8220;Blockchain Size,&#8221; Blockchain, April 2017,
+          <a href="https://blockchain.info/charts/blocks-size" target="_blank">
+              https://blockchain.info/charts/blocks-size
+          </a>
+        </li>
+        <li id="GitHub17c">
+          [GitHub17c] &#8220;White Paper,&#8221; GitHub, 03 May 2017,
+          <a href="https://github.com/ethereum/wiki/wiki/White-Paper" target="_blank">
+              https://github.com/ethereum/wiki/wiki/White-Paper
+          </a>
+        </li>
+        <li id="Buterin15">
+          [Buterin15] Vitalik Buterin, &#8220;State Tree Pruning,&#8221; Ethereum
+          Blog, 26 June 2015,
+          <a href="https://blog.ethereum.org/2015/06/26/state-tree-pruning/" target="_blank">
+              https://blog.ethereum.org/2015/06/26/state-tree-pruning/
+          </a>
+        </li>
+        <li id="Buterin14c">
+          [Buterin14c] Vitalik Buterin, &#8220;What If Ethereum Lived on a Treap? Or,
+          Blockchains Charging Rent,&#8221; Ethereum Blog, 27 May 2014,
+          <a
+              href="https://blog.ethereum.org/2014/05/27/what-if-ethereum-lived-on-a-treap-or-blockchains-charging-rent/"
+              target="_blank"
+          >
+              https://blog.ethereum.org/2014/05/27/what-if-ethereum-lived-on-a-treap-or-blockchains-charging-rent/
+          </a>
+        </li>
+        <li id="Borah15">
+          [Borah15] Peter Borah, &#8220;EIP 103 (Serenity): Blockchain rent,&#8221;
+          GitHub Issue Comment, 25 Nov 2015,
+          <a href="https://github.com/ethereum/EIPs/issues/35" target="_blank">
+              https://github.com/ethereum/EIPs/issues/35
+          </a>
+        </li>
+        <li id="SolidityDocs17">
+          [SolidityDocs17] &#8220;Libraries,&#8221; Solidity 0.4.12 documentation, 04
+          May 2017,
+          <a
+              href="http://solidity.readthedocs.io/en/develop/contracts.html#libraries"
+              target="_blank"
+          >
+              http://solidity.readthedocs.io/en/develop/contracts.html#libraries
+          </a>
+        </li>
+        <li id="Buterin16b">
+          [Buterin16b] Vitalik Buterin, &#8220;Blockchain rent: user-side
+          resurrectable edition,&#8221; GitHub Issue, 03 Apr 2016,
+          <a href="https://github.com/ethereum/EIPs/issues/88" target="_blank">
+              https://github.com/ethereum/EIPs/issues/88
+          </a>
+        </li>
+        <li id="GitHub17d">
+          [GitHub17d] &#8220;Issues &#8211; ethereum/EIPs,&#8221; GitHub, 2017,
+          <a href="https://github.com/ethereum/EIPs/issues" target="_blank">
+              https://github.com/ethereum/EIPs/issues
+          </a>
+        </li>
+        <li id="Mercer16a">
+          [Mercer16a] Rebekah Mercer, &#8220;Privacy on the Blockchain: Unique Ring
+          Signatures.,&#8221; e-Print archive, 25 Dec 2016,
+          <a href="https://arxiv.org/pdf/1612.01188.pdf" target="_blank">
+              https://arxiv.org/pdf/1612.01188.pdf
+          </a>
+        </li>
+        <li id="Mercer16b">
+          [Mercer16b] Rebekah Mercer, &#8220;Blockchain Privacy &#8211; Part 3: Ring
+          Signature Mixes,&#8221; Nicolas Courtois&#8217; cryptography blog, 04 Nov
+          2016,
+          <a href="http://blog.bettercrypto.com/?p=3227" target="_blank">
+              http://blog.bettercrypto.com/?p=3227
+          </a>
+        </li>
+        <li id="Ben-Sasson15">
+          [Ben-Sasson15] Eli Ben-Sasson, Alessandro Chiesa, Eran Tromer, Madars
+          Virza, &#8220;Scalable Zero Knowledge via Cycles of Elliptic Curves,&#8221;
+          Cryptology ePrint Archive, 28 Apr 2015,
+          <a href="https://eprint.iacr.org/2014/595" target="_blank">
+              https://eprint.iacr.org/2014/595
+          </a>
+        </li>
+        <li id="IPFS17">
+          [IPFS17] &#8220;IPFS is the Distributed Web,&#8221; IPFS, 2017, <a href="https://ipfs.io/" target="_blank">https://ipfs.io/</a>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>ACRONYMS</h2>
+      <ul>
+        <li><strong>IoT</strong> &#8211; Internet of Things</li>
+        <li><strong>PoW</strong> &#8211; Proof of Work</li>
+        <li><strong>PoS</strong> &#8211; Proof of Stake</li>
+        <li><strong>Dapps</strong> &#8211; Decentralized Applications</li>
+        <li><strong>TPS</strong> &#8211; Transactions Per Second</li>
+        <li><strong>zk-SNARK</strong> &#8211; Zero-knowledge succinct non-interactive arguments of knowledge</li>
+        <li><strong>IPFS</strong> &#8211; Inter-Planetary File System</li>
+      </ul>
+    </section>
+  </div>
+
+  <script type="text/javascript" src="smooth-scroll.min.js"></script>
+  <script type="text/javascript">smoothScroll.init();</script>
+</body>
+</html>

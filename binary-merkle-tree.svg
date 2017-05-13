@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg id="svg267515" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="230.83mm" width="316.13mm" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 1120.1388 817.91255">
+<defs id="defs267517">
+<marker id="marker91476" refY="0" refX="0" orient="auto" overflow="visible">
+<path id="path91478" d="m5.77 0-8.65 5v-10l8.65 5z" fill-rule="evenodd" transform="scale(.4)" stroke="#000" stroke-width="1pt"/>
+</marker>
+<marker id="marker91470" refY="0" refX="0" overflow="visible" orient="auto">
+<path id="path91472" d="m5.77 0-8.65 5v-10l8.65 5z" fill-rule="evenodd" transform="scale(.4)" stroke="#000" stroke-width="1pt"/>
+</marker>
+<marker id="marker91464" refY="0" refX="0" orient="auto" overflow="visible">
+<path id="path91466" d="m5.77 0-8.65 5v-10l8.65 5z" fill-rule="evenodd" transform="scale(.4)" stroke="#000" stroke-width="1pt"/>
+</marker>
+<marker id="marker91458" refY="0" refX="0" overflow="visible" orient="auto">
+<path id="path91460" d="m5.77 0-8.65 5v-10l8.65 5z" fill-rule="evenodd" transform="scale(.4)" stroke="#000" stroke-width="1pt"/>
+</marker>
+<marker id="marker91452" refY="0" refX="0" overflow="visible" orient="auto">
+<path id="path91454" d="m5.77 0-8.65 5v-10l8.65 5z" fill-rule="evenodd" transform="scale(.4)" stroke="#000" stroke-width="1pt"/>
+</marker>
+<marker id="marker357587" refY="0" refX="0" orient="auto" overflow="visible">
+<path id="path357589" d="m5.77 0-8.65 5v-10l8.65 5z" fill-rule="evenodd" transform="scale(.4)" stroke="#000" stroke-width="1pt"/>
+</marker>
+<marker id="marker357467" refY="0" refX="0" overflow="visible" orient="auto">
+<path id="path357469" d="m5.77 0-8.65 5v-10l8.65 5z" fill-rule="evenodd" transform="scale(.4)" stroke="#000" stroke-width="1pt"/>
+</marker>
+<marker id="marker357023" refY="0" refX="0" orient="auto" overflow="visible">
+<path id="path357025" d="m5.77 0-8.65 5v-10l8.65 5z" fill-rule="evenodd" transform="scale(.4)" stroke="#000" stroke-width="1pt"/>
+</marker>
+<marker id="marker356855" refY="0" refX="0" overflow="visible" orient="auto">
+<path id="path356857" d="m5.77 0-8.65 5v-10l8.65 5z" fill-rule="evenodd" transform="scale(.4)" stroke="#000" stroke-width="1pt"/>
+</marker>
+<marker id="marker356111" refY="0" refX="0" orient="auto" overflow="visible">
+<path id="path356113" d="m5.77 0-8.65 5v-10l8.65 5z" fill-rule="evenodd" transform="scale(.4)" stroke="#000" stroke-width="1pt"/>
+</marker>
+</defs>
+<metadata id="metadata267520">
+<rdf:RDF>
+<cc:Work rdf:about="">
+<dc:format>image/svg+xml</dc:format>
+<dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+<dc:title/>
+</cc:Work>
+</rdf:RDF>
+</metadata>
+<g id="layer1" transform="translate(188.02 -144.44)">
+<g id="g355288" transform="translate(83.476 12.122)">
+<rect id="rect355282" height="78.079" width="303.83" stroke="#000" y="133.32" x="136.66" stroke-width="2" fill="#fff"/>
+<text id="text355284" style="word-spacing:0px;letter-spacing:0px" line-height="125%" font-size="40px" y="189.13831" x="173.42371" font-family="sans-serif" xml:space="preserve" fill="#000000"><tspan id="tspan355286" font-size="45px" y="189.13831" x="173.42371">Root Hash</tspan></text>
+</g>
+<g id="g355524">
+<g id="g355467" transform="translate(-158.18 227.81)">
+<rect id="rect355295" height="78.231" width="283.99" stroke="#000" y="133.25" x="143.77" stroke-width="2" fill="#fff"/>
+<text id="text355297" style="word-spacing:0px;letter-spacing:0px" line-height="125%" font-size="40px" y="189.14374" x="190.44035" font-family="sans-serif" xml:space="preserve" fill="#000000"><tspan id="tspan355299" font-size="45px" y="189.14374" x="190.44035">Hash AB</tspan></text>
+</g>
+<g id="g355472" transform="translate(330.74 402.07)">
+<rect id="rect355308" height="78.231" width="283.99" stroke="#000" y="-41.006" x="143.77" stroke-width="2" fill="#fff"/>
+<text id="text355310" style="word-spacing:0px;letter-spacing:0px" xml:space="preserve" font-size="40px" y="14.885612" x="187.93547" font-family="sans-serif" line-height="125%" fill="#000000"><tspan id="tspan355312" font-size="45px" y="14.885612" x="187.93547">Hash CD</tspan></text>
+</g>
+</g>
+<g id="g355506" transform="translate(0,104)">
+<g id="g355477" transform="translate(-446.62 623.77)">
+<rect id="rect355321" height="78.452" width="223.88" stroke="#000" y="-136.82" x="259.6" stroke-width="2" fill="#fff"/>
+<text id="text355323" style="word-spacing:0px;letter-spacing:0px" line-height="125%" font-size="40px" y="-80.813522" x="290.23099" font-family="sans-serif" xml:space="preserve" fill="#000000"><tspan id="tspan355327" font-size="45px" y="-80.813522" x="290.23099">Hash A</tspan></text>
+</g>
+<g id="g355457" transform="translate(-139.01 122.42)">
+<rect id="rect355338" height="78.452" width="223.88" stroke="#000" y="364.53" x="250.07" stroke-width="2" fill="#fff"/>
+<text id="text355340" style="word-spacing:0px;letter-spacing:0px" xml:space="preserve" font-size="40px" y="420.53568" x="282.06308" font-family="sans-serif" line-height="125%" fill="#000000"><tspan id="tspan355342" font-size="45px" y="420.53568" x="282.06308">Hash B</tspan></text>
+</g>
+<g id="g355462" transform="translate(200.38 260.97)">
+<rect id="rect355351" height="78.452" width="223.88" stroke="#000" y="225.98" x="208.77" stroke-width="2" fill="#fff"/>
+<text id="text355353" style="word-spacing:0px;letter-spacing:0px" line-height="125%" font-size="40px" y="281.98618" x="240.11719" font-family="sans-serif" xml:space="preserve" fill="#000000"><tspan id="tspan355355" font-size="45px" y="281.98618" x="240.11719">Hash C</tspan></text>
+</g>
+<g id="g355452" transform="translate(474.64 15.296)">
+<rect id="rect355364" height="78.452" width="223.88" stroke="#000" y="471.66" x="232.6" stroke-width="2" fill="#fff"/>
+<text id="text355366" style="word-spacing:0px;letter-spacing:0px" xml:space="preserve" font-size="40px" y="527.66156" x="262.43765" font-family="sans-serif" line-height="125%" fill="#000000"><tspan id="tspan355368" font-size="45px" y="527.66156" x="262.43765">Hash D</tspan></text>
+</g>
+</g>
+<g id="g355553" transform="translate(0,268)">
+<g stroke="#c0392b">
+<g id="g355555" transform="translate(-446.62 647.77)">
+<rect id="rect355557" height="78.452" width="223.88" y="-136.82" x="259.6" stroke-width="2" fill="#fff"/>
+<text id="text355559" style="word-spacing:0px;letter-spacing:0px" font-family="sans-serif" xml:space="preserve" font-size="40px" y="-81.187057" x="322.16824" stroke-width="1px" line-height="125%" fill="#000000"><tspan id="tspan355561" font-size="45px" stroke="#c0392b" y="-81.187057" x="322.16824">Tx A</tspan></text>
+<text id="text355591" style="word-spacing:0px;letter-spacing:0px" font-family="sans-serif" xml:space="preserve" font-size="40px" y="-76.551392" x="306.62198" stroke-width="1px" line-height="125%" fill="#000000"><tspan id="tspan355593" x="306.62198" y="-76.551392"/></text>
+</g>
+<g id="g355563" transform="translate(-139.01 146.42)">
+<rect id="rect355565" height="78.452" width="223.88" y="364.53" x="250.07" stroke-width="2" fill="#fff"/>
+<text id="text355567" style="word-spacing:0px;letter-spacing:0px" font-family="sans-serif" font-size="40px" line-height="125%" y="420.16214" x="314.00034" stroke-width="1px" xml:space="preserve" fill="#000000"><tspan id="tspan355569" font-size="45px" stroke="#c0392b" y="420.16214" x="314.00034">Tx B</tspan></text>
+</g>
+<g id="g355571" transform="translate(200.38 284.97)">
+<rect id="rect355573" height="78.452" width="223.88" y="225.98" x="208.77" stroke-width="2" fill="#fff"/>
+<text id="text355575" style="word-spacing:0px;letter-spacing:0px" font-family="sans-serif" xml:space="preserve" font-size="40px" y="281.59067" x="272.05444" stroke-width="1px" line-height="125%" fill="#000000"><tspan id="tspan355577" font-size="45px" stroke="#c0392b" y="281.59067" x="272.05444">Tx C</tspan></text>
+</g>
+<g id="g355579" transform="translate(474.64 39.296)">
+<rect id="rect355581" height="78.452" width="223.88" y="471.66" x="232.6" stroke-width="2" fill="#fff"/>
+<text id="text355583" style="word-spacing:0px;letter-spacing:0px" font-family="sans-serif" font-size="40px" line-height="125%" y="527.28802" x="294.37491" stroke-width="1px" xml:space="preserve" fill="#000000"><tspan id="tspan355585" font-size="45px" stroke="#c0392b" y="527.28802" x="294.37491">Tx D</tspan></text>
+<text id="text355587" style="word-spacing:0px;letter-spacing:0px" font-family="sans-serif" xml:space="preserve" font-size="40px" y="176.20941" x="285.36279" stroke-width="1px" line-height="125%" fill="#000000"><tspan id="tspan355589" x="285.36279" y="176.20941"/></text>
+</g>
+</g>
+<text id="text355595" style="word-spacing:0px;letter-spacing:0px" xml:space="preserve" font-size="40px" y="693.79077" x="-189.21353" font-family="sans-serif" line-height="125%" fill="#000000"><tspan id="tspan355597" x="-189.21353" y="693.79077">* Tx = Transaction</tspan></text>
+<g stroke="#000" stroke-width="6.0812" fill="none">
+<path id="path355599" marker-end="url(#marker356111)" d="m-75.081 509.95v-90.457"/>
+<path id="path356853" marker-end="url(#marker356855)" d="m223 509.95v-90.457"/>
+<path id="path357021" marker-end="url(#marker357023)" d="m521.09 509.95v-90.457"/>
+<path id="path357465" marker-end="url(#marker357467)" d="m819.18 509.95v-90.457"/>
+<path id="path357585" marker-end="url(#marker357587)" d="m-75.117 323.23 125.23-139.07"/>
+<path id="path91450" marker-end="url(#marker91452)" d="m222.57 322.52-21.22-133.99"/>
+<path id="path91456" marker-end="url(#marker91458)" d="m819.99 323.23-125.23-139.07"/>
+<path id="path91462" marker-end="url(#marker91464)" d="m522.5 322.52 21.22-133.99"/>
+<path id="path91468" marker-end="url(#marker91470)" d="m126.31 91.802 169.52-126.22"/>
+<path id="path91474" marker-end="url(#marker91476)" d="m617.71 91.802-169.52-126.22"/>
+</g>
+</g>
+</g>
+</svg>

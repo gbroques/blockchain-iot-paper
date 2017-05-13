@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg id="svg2" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="98.349mm" width="102.06mm" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 361.61431 348.48233">
+<metadata id="metadata7">
+<rdf:RDF>
+<cc:Work rdf:about="">
+<dc:format>image/svg+xml</dc:format>
+<dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+<dc:title/>
+</cc:Work>
+</rdf:RDF>
+</metadata>
+<g id="layer1" transform="translate(-159.61 -290.72)">
+<g stroke-width="2">
+<rect id="rect91355" height="346.48" width="359.61" stroke="#000" y="291.72" x="160.61" fill="#fff"/>
+<rect id="rect91359" height="124.25" width="309.11" stroke="#c0392b" y="311.88" x="185.87" fill="none"/>
+<rect id="rect91363" height="164.36" width="308.81" stroke="#f39c12" y="454.46" x="186.02" fill="none"/>
+</g>
+<text id="text91384" style="word-spacing:0px;letter-spacing:0px" xml:space="preserve" font-size="40px" y="484.65649" x="208.15735" font-family="sans-serif" line-height="125%" fill="#e67e22"><tspan id="tspan91386" font-size="17.5px" y="484.65649" x="208.15735">TRANSACTIONS</tspan></text>
+<g stroke="#f39c12" stroke-width="1px" fill="none">
+<path id="path91424" d="m208.09 514.94h264.66"/>
+<path id="path91426" d="m208.09 530.94h264.66"/>
+<path id="path91428" d="m208.09 548.94h264.66"/>
+<path id="path91430" d="m208.09 564.94h264.66"/>
+<path id="path91432" d="m208.09 578.94h264.66"/>
+<path id="path91434" d="m208.09 594.94h264.66"/>
+<path id="path91438" d="m208.09 498.94h264.66"/>
+</g>
+<text id="text91440" style="word-spacing:0px;letter-spacing:0px" line-height="125%" font-size="40px" y="339.1539" x="205.88318" font-family="sans-serif" xml:space="preserve" fill="#e67e22"><tspan id="tspan91442" font-size="17.5px" y="339.1539" x="205.88318" fill="#c0392b">HEADER</tspan></text>
+<rect id="rect91454" height="32.11" width="275.39" stroke="#c0392b" y="394.34" x="203.28" stroke-width="1.5" fill="none"/>
+<g font-size="40px" font-family="sans-serif">
+<text id="text91456" style="word-spacing:0px;letter-spacing:0px" line-height="125%" y="416.914" x="237.44257" xml:space="preserve" fill="#e67e22"><tspan id="tspan91458" font-size="17.5px" y="416.914" x="237.44257" fill="#c0392b">Hash of all transactions</tspan></text>
+<text id="text91520" style="word-spacing:0px;letter-spacing:0px" line-height="125%" y="399.50507" x="405.71429" xml:space="preserve" fill="#000000"><tspan id="tspan91522" y="399.50507" x="405.71429"/></text>
+<text id="text91446" style="word-spacing:0px;letter-spacing:0px" xml:space="preserve" y="375.48547" x="214.8287" line-height="125%" fill="#e67e22"><tspan id="tspan91450" font-size="17.5px" y="375.48547" x="214.8287" fill="#c0392b">Previous hash</tspan></text>
+</g>
+<rect id="rect91532" height="32.395" width="144.96" stroke="#c0392b" y="352.76" x="203.28" stroke-width="1.5" fill="none"/>
+<text id="text91462" style="word-spacing:0px;letter-spacing:0px" line-height="125%" font-size="40px" y="373.83798" x="369.54245" font-family="sans-serif" xml:space="preserve" fill="#e67e22"><tspan id="tspan91464" font-size="17.5px" y="373.83798" x="369.54245" fill="#c0392b">Timestamp</tspan></text>
+<rect id="rect91534" height="32.545" width="121.54" stroke="#c0392b" y="352.74" x="357.13" stroke-width="1.5" fill="none"/>
+</g>
+</svg>
